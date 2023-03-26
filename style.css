@@ -1,0 +1,23 @@
+li {
+    list-style: none;
+    width: 200px;
+    height: 50px;
+    background-color: aqua;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.space {
+    border: 3px solid orange;
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    box-sizing:border-box;
+    text-align: center;
+}
+
+.dummy{
+    opacity: 0;
+}
