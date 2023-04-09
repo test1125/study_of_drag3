@@ -1,13 +1,16 @@
 function mouseUp() {
-    target.style.pointerEvents ="auto";
+    if(target){
+        target.style.pointerEvents ="auto";
 
-    let insert = document.querySelector(".space");
-    insert.replaceWith(target);
-    target.style.position = "static";
-    target.style.zIndex = null;
-    target.style.left = null;
-    target.style.top = null;
-    target = null;
+        let insert = document.querySelector(".space");
+        insert.replaceWith(target);
+        target.style.position = "static";
+        target.style.zIndex = null;
+        target.style.left = null;
+        target.style.top = null;
+        target = null;
+    }
+
 }
 
 function mouseMove(e) {
@@ -33,6 +36,9 @@ function mouseOver(e) {
 
 document.addEventListener("mousedown", e=> {
     target = e.target;
+    if(target.tagName != "LI" || target.className == "dummy"){
+        return;
+    }
 
     //mouseoverにdragoverの役割をさせるため
     target.style.pointerEvents ="none";
