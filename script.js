@@ -21,8 +21,8 @@ function mouseMove(e) {
 }
 
 function mouseOver(e) {
-    console.log("mouseOver")
     if(target){
+        console.log("mouseOver");
         if(e.target.tagName=="LI"){
             if(document.querySelector(".space")){
                 document.querySelectorAll(".space").forEach(elm => {
@@ -35,11 +35,10 @@ function mouseOver(e) {
 }
 
 document.addEventListener("mousedown", e=> {
-    target = e.target;
-    if(target.tagName != "LI" || target.className == "dummy"){
+    if(e.target.tagName != "LI" || e.target.className == "dummy"){
         return;
     }
-
+    target = e.target;
     //mouseoverにdragoverの役割をさせるため
     target.style.pointerEvents ="none";
 
